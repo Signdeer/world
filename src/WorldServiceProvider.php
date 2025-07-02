@@ -71,6 +71,8 @@ class WorldServiceProvider extends ServiceProvider
 	}
 
 
+	
+
 	/**
 	 * Method to publish the resource to the app resources folder
 	 * @return void
