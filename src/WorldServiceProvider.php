@@ -52,8 +52,7 @@ class WorldServiceProvider extends ServiceProvider
 	 * Method to publish the resource to the app resources folder
 	 * @return void
 	 */
-	private function publishResources(): void
-	{
+	private function publishResources(): void {
 		$this->publishes([
 			__DIR__ . '/../config/world.php' => config_path('world.php'),
 		], 'world');
@@ -65,7 +64,12 @@ class WorldServiceProvider extends ServiceProvider
 		$this->publishes([
 			__DIR__ . '/../resources/lang' => resource_path('lang/vendor/world'),
 		], 'world');
+
+		$this->publishes([
+			__DIR__ . '/Database/Migrations' => database_path('migrations'),
+		], 'world-migrations');
 	}
+
 
 	/**
 	 * Method to publish the resource to the app resources folder
@@ -74,8 +78,8 @@ class WorldServiceProvider extends ServiceProvider
 	private function loadCommands(): void
 	{
 		$this->commands([
-            Commands\InstallWorldData::class,
-			Commands\RefreshWorldData::class,
+			config('world.commands.install', Commands\InstallWorldData::class),
+            config('world.commands.refresh', Commands\RefreshWorldData::class)
 		]);
 	}
 }

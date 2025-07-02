@@ -209,4 +209,9 @@ return [
 		'timezones' => \Nnjeim\World\Models\Timezone::class,
 	],
 
+	'commands' => [
+		'install' => Commands\InstallWorldData::class,
+		'refresh' => Commands\RefreshWorldData::class,
+	]
 ];
+

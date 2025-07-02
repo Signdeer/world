@@ -37,9 +37,26 @@ class InstallWorldData extends Command
 			$worldConfig = include config_path('world.php');
 			config()->set('world', $worldConfig);
 		}
-        // migrate new tables
-        Artisan::call('migrate');
+       
+        // Migrate new tables
+		// Multi-database (landlord)
+		Artisan::call('migrate', [
+			'--path' => 'database/migrations/landlord',
+			'--database' => 'landlord',
+			'--force' => true,
+		]);
+
+		// Single-database (landlord & tenant migrations run on default)
+		Artisan::call('migrate', [
+			'--path' => 'database/migrations/landlord',
+			'--force' => true,
+		]);
+		Artisan::call('migrate', [
+			'--path' => 'database/migrations/tenant',
+			'--force' => true,
+		]);
+
         // re-seed the world data
-        Artisan::call('db:seed --class=WorldSeeder --database=' . config('world.connection'), array(), $this->getOutput());
+        // Artisan::call('db:seed --class=WorldSeeder --database=' . config('world.connection'), array(), $this->getOutput());
     }
 }

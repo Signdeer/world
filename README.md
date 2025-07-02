@@ -1,10 +1,4 @@
-<p style="text-align: center; padding: 3rem;"><img src="./logo.jpg" width="150" alt="Laravel world"/></p>
-
-<p align="center">
-<a href="https://packagist.org/packages/nnjeim/world"><img src="https://poser.pugx.org/nnjeim/world/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/nnjeim/world"><img src="https://poser.pugx.org/nnjeim/world/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/nnjeim/world"><img src="https://poser.pugx.org/nnjeim/world/license.svg" alt="License"></a>
-</p>
+This fork is maintained by [Signdeer](https://signdeer.com), a secure, modern platform for e-signatures, approvals, and digital document workflows built for African teams and global standards.
 
 The World is a Laravel package that provides a comprehensive list of countries, states, cities, timezones, currencies, and languages. You can access the data using the **World Facade** or through defined API routes.
 
