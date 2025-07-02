@@ -1,5 +1,5 @@
 {
-    "name": "nnjeim/world",
+    "name": "signdeer/world",
     "description": "Laravel countries, states, cities and currencies",
     "keywords": [
         "laravel",
@@ -10,7 +10,7 @@
         "timezones",
         "currencies"
     ],
-    "homepage": "https://github.com/nnjeim/world.git",
+    "homepage": "https://github.com/signdeer/world.git",
     "license": "MIT",
     "type": "laravel-package",
     "authors": [
